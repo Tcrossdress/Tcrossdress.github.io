@@ -144,8 +144,8 @@ async function init(){
   DATA.forEach(d => d.tags.forEach(t => counts[t] = (counts[t]||0)+1));
   allTags = Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
   const jst = new Date(Date.now()+9*3600e3), seed = jst.getUTCFullYear()*10000+(jst.getUTCMonth()+1)*100+jst.getUTCDate();
-  drawPick(pick(mulberry(seed),3),"💗 今日のピックアップ");
-  $("reroll").onclick = () => drawPick(pick(Math.random,3),"🎀 ランダムピックアップ");
+  drawPick(pick(mulberry(seed),2),"💗 今日のピックアップ");
+  $("reroll").onclick = () => drawPick(pick(Math.random,2),"🎀 ランダムピックアップ");
   $("q").oninput = render; $("mode").onchange = render; $("sort").onchange = render;
   $("clear").onclick = () => { sel.clear(); $("q").value = ""; render(); };
   render();
